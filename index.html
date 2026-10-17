@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valyuta Konvertori</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💱 Valyuta Konvertori</h1>
+
+        <p id="updatedTime" class="updated-time">Kurs yangilanmagan</p>
+
+        <div class="converter">
+
+            <div class="input-group">
+                <label for="amount">Miqdor</label>
+                <input type="number" id="amount" value="1" min="0" step="any" placeholder="Miqdorni kiriting">
+            </div>
+
+            <div class="currency-row">
+                <div class="currency-box">
+                    <label for="fromCurrency">Qaysi valyutadan</label>
+                    <select id="fromCurrency"></select>
+                </div>
+
+                <button id="swapBtn" class="swap-btn" title="Valyutalarni almashtirish">⇄</button>
+
+                <div class="currency-box">
+                    <label for="toCurrency">Qaysi valyutaga</label>
+                    <select id="toCurrency"></select>
+                </div>
+            </div>
+
+            <div class="result">
+                <p id="resultText">Natija: --</p>
+                <p id="rateText" class="rate">Kurs: --</p>
+            </div>
+
+            <div class="btn-row">
+                <button id="convertBtn" class="convert-btn">Konvertatsiya qilish</button>
+                <button id="clearBtn" class="clear-btn">Tozalash</button>
+            </div>
+
+            <p id="errorMsg" class="error"></p>
+        </div>
+
+        <div class="history">
+            <h2>📜 Oxirgi konvertatsiyalar</h2>
+            <ul id="historyList"></ul>
+            <button id="clearHistoryBtn" class="clear-history-btn">Tarixni tozalash</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

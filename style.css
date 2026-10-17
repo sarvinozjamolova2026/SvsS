@@ -1,0 +1,249 @@
+/* ====== Umumiy sozlamalar ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+/* ====== Asosiy konteyner ====== */
+.container {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.updated-time {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 22px;
+    font-style: italic;
+}
+
+/* ====== Konverter ====== */
+.converter {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+input:focus, select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    background: #fff;
+}
+
+.currency-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: end;
+}
+
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.swap-btn {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+/* ====== Natija bloki ====== */
+.result {
+    background: linear-gradient(135deg, #f0f4ff, #e8ecff);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 5px solid #667eea;
+    word-break: break-word;
+}
+
+#resultText {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.rate {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ====== Tugmalar ====== */
+.btn-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+
+.convert-btn,
+.clear-btn,
+.clear-history-btn {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clear-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+}
+
+.convert-btn:hover,
+.clear-btn:hover,
+.clear-history-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.convert-btn:active,
+.clear-btn:active,
+.clear-history-btn:active {
+    transform: translateY(0);
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    min-height: 18px;
+    font-weight: 500;
+}
+
+/* ====== Tarix bo‘limi ====== */
+.history {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px dashed #e0e0e0;
+}
+
+.history h2 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+#historyList {
+    list-style: none;
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+
+#historyList li {
+    background: #f5f6fa;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #333;
+    border-left: 4px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+#historyList li span {
+    color: #888;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.clear-history-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: #95a5a6;
+}
+
+/* ====== Mobil moslashuv ====== */
+@media (max-width: 480px) {
+    .container {
+        padding: 22px 18px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .currency-row {
+        grid-template-columns: 1fr;
+    }
+
+    .swap-btn {
+        justify-self: center;
+        transform: rotate(90deg);
+    }
+
+    .swap-btn:hover {
+        transform: rotate(270deg) scale(1.1);
+    }
+
+    #resultText {
+        font-size: 18px;
+    }
+}
